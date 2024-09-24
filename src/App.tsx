@@ -1,15 +1,9 @@
-import React from 'react';
-import './App.css';
-import Labs from './Labs';
-
-
-function App() {
+import React from "react";
+import Labs from "./Labs";
+export default function App() {
   return (
-    <div className="App">
-     <h1>Welcome to Web Dev</h1>
-     <Labs/>
+    <div>
+      <Labs />
     </div>
   );
 }
-
-export default App;
