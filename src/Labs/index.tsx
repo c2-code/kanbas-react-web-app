@@ -7,10 +7,12 @@ import Lab4 from "./Lab4";
 import Lab5 from "./Lab5";
 import Lab6 from "./Lab6";
 
+
 export default function Labs() {
     return (
         <div>   
         <h1>Labs</h1>
+        <h2> Connie Too, Section 2 </h2>
         <TOC />
       <Routes>
         <Route path="/" element={<Navigate to="Lab1" />} />
