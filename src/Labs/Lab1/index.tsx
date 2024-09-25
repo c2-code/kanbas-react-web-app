@@ -55,7 +55,7 @@ export default function Lab1() {
           <li>Flip and cook the other side.</li>
           <li>Serve and enjoy!</li>
         </ol>
-        How to Matcha Cookies:
+        My Favorite Recipe: How to Matcha Cookies:
         <ol id="wd-matcha-cookies">
           <li>Brown butter and let cool</li>
           <li>Mix together matcha, flour, baking soda</li>
@@ -101,61 +101,61 @@ export default function Lab1() {
           <tbody>
             <tr>
               <td>Q1</td>
-              <td>CSS</td>
+              <td>HTML</td>
               <td>09/24/24</td>
               <td>85</td>
             </tr>
             <tr>
               <td>Q2</td>
-              <td>Bootstrap & Flex</td>
+              <td>CSS</td>
               <td>10/01/24</td>
               <td>90</td>
             </tr>
             <tr>
               <td>Q3</td>
-              <td>JavaScript</td>
+              <td>CSS</td>
               <td>10/08/24</td>
               <td>95</td>
             </tr>
             <tr>
               <td>Q4</td>
-              <td>Routing</td>
+              <td>JS</td>
               <td>10/15/24</td>
               <td>100</td>
             </tr>
             <tr>
               <td>Q5</td>
-              <td>State and Redux</td>
+              <td>JS</td>
               <td>10/22/24</td>
               <td>100</td>
             </tr>
             <tr>
             <td>Q6</td>
-              <td>Node</td>
+              <td>Redux</td>
               <td>11/15/24</td>
               <td>100</td>
             </tr>
             <tr>
             <td>Q7</td>
-              <td>Session</td>
+              <td>Redux</td>
               <td>11/12/24</td>
               <td>100</td>
             </tr>
             <tr>
             <td>Q8</td>
-              <td>MongoDB</td>
+              <td>Node</td>
               <td>11/19/24</td>
               <td>100</td>
             </tr>
             <tr>
             <td>Q9</td>
-              <td>Mongoose</td>
+              <td>Node</td>
               <td>11/26/24</td>
               <td>100</td>
             </tr>
             <tr>
             <td>Q10</td>
-              <td>Unknown</td>
+              <td>Mongo</td>
               <td>12/03/24</td>
               <td>100</td>
             </tr>
@@ -163,7 +163,7 @@ export default function Lab1() {
           <tfoot>
             <tr>
               <td colSpan={3}>Average</td>
-              <td>90</td>
+              <td>97</td>
             </tr>
           </tfoot>
         </table>
@@ -186,7 +186,8 @@ export default function Lab1() {
   <form id="wd-text-fields">
     <h5>Text Fields</h5>
     <label htmlFor="wd-text-fields-username">Username:</label>
-    <input id="wd-text-fields-username" placeholder="jdoe" /> <br />
+    <input title="Please enter your username"
+    id="wd-text-fields-username" placeholder="jdoe" /> <br />
     <label htmlFor="wd-text-fields-password">Password:</label>
     <input type="password" id="wd-text-fields-password" value="123@#$asd" />
     <br />
@@ -288,9 +289,9 @@ export default function Lab1() {
 </div>
 <h4>Anchor tag</h4>
 Please
-<a id="wd-lipsum" href="https://www.lipsum.com">click here</a>
+<a id="wd-lipsum" href="https://www.lipsum.com"> click here </a>
 to get dummy text<br/>
-<a id="wd-github" href="https://github.com/c2-code/kanbas-react-web-app">Github Repo</a>
+<a id="wd-github" href="https://github.com/c2-code/kanbas-react-web-app"> Github Repo </a>
 to view Github repository<br/>
     </div>
   );
