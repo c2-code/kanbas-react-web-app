@@ -142,7 +142,7 @@ export default function Dashboard() {
               <img src="/images/orange.jpg" width="100%" height={160}/>
               <div className="card-body">
                 <h5 className="wd-dashboard-course-title card-title">
-                  Web Dev
+                  CS 4550 Web Dev
                 </h5>
                 <p className="wd-dashboard-course-title card-text">
                   Web Development
