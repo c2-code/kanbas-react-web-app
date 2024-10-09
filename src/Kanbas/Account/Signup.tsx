@@ -1,27 +1,23 @@
-import Signin from "./Signin";
-import Profile from "./Profile";
-import Signup from "./Signup";
-import { Routes, Route, Navigate } from "react-router";
-import AccountNavigation from "./Navigation";
-
-
-export default function Account() {
+// import React from "react";
+import { Link } from "react-router-dom";
+export default function Signup() {
   return (
-    <div id="wd-account-screen" className = "w-50">
-      <div className="d-flex">
-        <div className="d-none d-md-block">
-          <AccountNavigation />
-        </div>
-        <div className="flex-fill">
-          <Routes>
-            <Route path="/"
-              element={<Navigate to="/Kanbas/Account/Signin" />} />
-            <Route path="/Signin" element={<Signin />} />
-            <Route path="/Profile" element={<Profile />} />
-            <Route path="/Signup" element={<Signup />} />
-          </Routes>
-        </div>
-      </div>
+    <div id="wd-signup-screen">
+      <h1>Sign up</h1>
+      <input id="wd-username"
+        placeholder="username"
+        className="form-control mb-2" />
+      <input id="wd-password"
+        placeholder="password" type="password"
+        className="form-control mb-2" />
+      <input id="wd-password-verify"
+        placeholder="verify password" type="password"
+        className="form-control mb-2" />
+      <Link id="wd-signup-btn"
+        to="/Kanbas/Account/Profile" 
+        className="btn btn-primary w-100">
+        Sign up </Link>
+      <Link id="wd-signin-link" to="/Kanbas/Account/Signin">Sign In</Link>      
     </div>
   );
 }
