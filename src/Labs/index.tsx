@@ -8,6 +8,7 @@ export default function Labs() {
     return (
      <div className="p-3">
       <h1>Labs</h1>
+      <h2>By: Connie Too, Section 2</h2>  
       <TOC />
       <Routes>
        <Route path="Lab1" element={<Lab1 />} />
