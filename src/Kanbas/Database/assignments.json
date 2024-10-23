@@ -6,7 +6,7 @@
         "availableDate": "April 25 at 12:00 AM",
         "dueDate": "May 1 at 11:59 PM",
         "points": 40,
-        "description":"Design a spacecraft structure for a specific mission profile."
+        "description":"Perform a detailed analysis of a rocket propulsion system."
     },
     {
         "_id": "A102",
@@ -15,7 +15,7 @@
         "availableDate": "April 25 at 12:00 AM",
         "dueDate": "May 4 at 11:59 PM",
         "points": 20,
-        "description":"Design a spacecraft structure for a specific mission profile."
+        "description":"Create a special report on combustion processes and efficiency."
     },
     {
         "_id": "A103",
