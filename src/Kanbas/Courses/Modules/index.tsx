@@ -4,14 +4,21 @@ import ModulesControls from "./ModulesControls";
 import LessonControlButtons from "./LessonControlButtons";
 import ModuleControlButtons from "./ModuleControlButtons";
 import { BsGripVertical } from "react-icons/bs";
+import { useState } from "react";
 
 export default function Modules() {
   const { cid } = useParams();
-  const modules = db.modules;
+  const [modules, setModules] = useState<any[]>(db.modules);
+  const [moduleName, setModuleName] = useState("");
+  const addModule = () => {
+    setModules([ ...modules, { _id: new Date().getTime().toString(),
+                                     name: moduleName, course: cid, lessons: [] } ]);
+    setModuleName("");
+  };
 
   return (
     <div>
-      <ModulesControls />
+      <ModulesControls setModuleName={setModuleName} moduleName={moduleName} addModule={addModule} />
       <br />
       <br />
       <br />
@@ -24,7 +31,11 @@ export default function Modules() {
               <div className="wd-title p-3 ps-2 bg-secondary">
                 <BsGripVertical className="me-2 fs-3" />
                 {module.name}
-                <ModuleControlButtons />{" "}
+                <ModuleControlButtons moduleId={""} deleteModule={function (moduleId: string): void {
+                  throw new Error("Function not implemented.");
+                } } editModule={function (moduleId: string): void {
+                  throw new Error("Function not implemented.");
+                } } />{" "}
               </div>
               {module.lessons && (
                 <ul className="wd-lessons list-group rounded-0">
