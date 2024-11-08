@@ -1,14 +1,5 @@
-import { useSelector } from "react-redux";
-
 export default function ModuleEditor({ dialogTitle, moduleName, setModuleName, addModule }:
     { dialogTitle: string; moduleName: string; setModuleName: (name: string) => void; addModule: () => void; }) {
-    const { currentUser } = useSelector((state: any) => state.accountReducer);
-    const isFaculty = currentUser?.role === 'FACULTY';
-
-    if (!isFaculty) {
-        return null;
-    }
-
     return (
         <div id="wd-add-module-dialog" className="modal fade" data-bs-backdrop="static" data-bs-keyboard="false">
             <div className="modal-dialog">
@@ -33,4 +24,3 @@ export default function ModuleEditor({ dialogTitle, moduleName, setModuleName, a
         </div>
     );
 }
-    
