@@ -1,14 +1,13 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { FaPlus } from "react-icons/fa6";
 import GreenCheckmark from "./GreenCheckmark";
 import ModuleEditor from "./ModuleEditor";
-import * as db from "../../Database";
 import { useSelector } from "react-redux";
 
 
 export default function ModulesControls({ moduleName, setModuleName, addModule }:
     { moduleName: string; setModuleName: (title: string) => void; addModule: () => void; }) {
     const { currentUser } = useSelector((state: any) => state.accountReducer);
-    const { enrollments, users } = db;
     return (
         <div id="wd-modules-controls" className="text-nowrap">
             {currentUser.role === "FACULTY" && (

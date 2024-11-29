@@ -5,7 +5,8 @@ import { IoEllipsisVertical } from 'react-icons/io5';
 import GreenCheckmark from './GreenCheckmark';
 import { deleteAssignment } from './reducer'; 
 
-export default function AssignmentControlButtons({ assignmentID }: { assignmentID: string }) {
+export default function AssignmentControlButtons({ assignmentID }: { assignmentID: string 
+  deleteAssignment: (assignmentId: string) => Promise<void>;}) {
   const dispatch = useDispatch();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 

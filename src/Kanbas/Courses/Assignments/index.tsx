@@ -4,19 +4,35 @@ import ModuleControlButtons from "./ModuleControlButtons";
 import { MdOutlineAssignment } from "react-icons/md";
 import AssignmentControlButtons from "./AssignmentControlButtons";
 import { useParams } from "react-router";
-import * as db from "../../Database";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addAssignment, editAssignment, updateAssignment, deleteAssignment }
-    from "./reducer";
+import { deleteAssignment, setAssignments} from "./reducer";
+import { useEffect } from "react";
+import * as coursesClient from "../client";
+import * as assignmentsClient from "./client";
 
 
 export default function Assignments() {
     const { cid } = useParams();
     const { currentUser } = useSelector((state: any) => state.accountReducer);
-    const { enrollments, users } = db;
     const { assignments } = useSelector((state: any) => state.assignmentsReducer);
     const dispatch = useDispatch();
+
+    const fetchAssignments = async () => {
+        const assignments = await coursesClient.findAssigmentsForCourse(cid as string);
+        dispatch(setAssignments(assignments));
+      };
+      useEffect(() => {
+        fetchAssignments();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
+    
+      const removeAssignment = async (assignmentId: string) => {
+        await assignmentsClient.deleteAssignment(assignmentId);
+        dispatch(deleteAssignment(assignmentId));
+      };
+    
+    
 
     return (
         <div id="wd-assignments">
@@ -59,7 +75,7 @@ export default function Assignments() {
                                     </div>
                                     {currentUser.role === "FACULTY" && (
                                         <div className="col-auto">
-                                            <AssignmentControlButtons assignmentID={assignment._id} />
+                                                <AssignmentControlButtons deleteAssignment={removeAssignment} assignmentID={assignment._id} />
                                         </div>)}
                                 </div>
                             </li>))}

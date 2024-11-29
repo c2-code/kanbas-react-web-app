@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FaPlus } from "react-icons/fa6";
 import { BsSearch } from "react-icons/bs";
 import * as db from "../../Database";
 import { useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 export default function AssignmentControls() {
