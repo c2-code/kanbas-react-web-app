@@ -22,7 +22,7 @@ const AssignmentsEditor: React.FC = () => {
   const dispatch = useDispatch();
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
 
-  const addingAssignment = pathname.includes("NewAssignment");
+  const addingAssignment = pathname.includes("New");
   const initAssignment = addingAssignment
   ? emptyAssignment
   : assignments.find((assignment: any) => assignment._id === aid) || emptyAssignment;
@@ -33,8 +33,8 @@ const AssignmentsEditor: React.FC = () => {
   const handleSave = async () => {
     if (!cid) return;
     if (addingAssignment) {
-      const newAssignment = {...assignment, course: cid};
-      const assignmentFromDb = await coursesClient.createModuleForCourse(cid, newAssignment);
+      const newAssignment = {...assignment, course: cid, _id: Date.now().toString()};
+      const assignmentFromDb = await coursesClient.createAssignmentForCourse(cid, newAssignment);
       dispatch(addAssignment(assignmentFromDb));
     } else {
       await assignmentsClient.updateAssignment(assignment);
@@ -298,7 +298,15 @@ const AssignmentsEditor: React.FC = () => {
         <hr />
       <div className="d-flex justify-content-end">
         <Link to={`/Kanbas/Courses/${cid}/Assignments`} className="btn btn-secondary me-2">Cancel</Link>
-        <Link to={`/Kanbas/Courses/${cid}/Assignments`} className="btn btn-danger" onClick={handleSave}>Save</Link>
+        <Link 
+  to={addingAssignment 
+    ? `/Kanbas/Courses/${cid}/Assignments` 
+    : `/Kanbas/Courses/${cid}/Assignments/${aid}`}
+  className="btn btn-danger" 
+  onClick={handleSave}
+>
+  Save
+</Link>
       </div>
       </div>
     </div>
