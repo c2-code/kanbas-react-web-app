@@ -20,15 +20,19 @@ const AssignmentsEditor: React.FC = () => {
   const { aid, cid } = useParams();
   const { pathname } = useLocation();
   const dispatch = useDispatch();
+  // const navigate = useNavigate(); 
   const { assignments } = useSelector((state: any) => state.assignmentsReducer);
+  console.log("aid:", aid);
 
   const addingAssignment = pathname.includes("New");
   const initAssignment = addingAssignment
   ? emptyAssignment
   : assignments.find((assignment: any) => assignment._id === aid) || emptyAssignment;
+  console.log("initAssignment:", initAssignment);
 
 
   const [assignment, setAssignment] = useState<any>(initAssignment);
+  console.log("Assignment being saved:", assignment);
 
   const handleSave = async () => {
     if (!cid) return;
@@ -39,6 +43,7 @@ const AssignmentsEditor: React.FC = () => {
     } else {
       await assignmentsClient.updateAssignment(assignment);
       dispatch(updateAssignment(assignment));
+      // navigate(`/Kanbas/Courses/${cid}/Assignments`);
     }
   };
 

@@ -55,7 +55,7 @@ export default function TOC() {
       </li>
       <li className="nav-item">
         <a id="wd-k" href="https://kanbas-node-server-app-2qz0.onrender.com/api/courses" className="nav-link">
-          Server on Heroku
+          Server on Render
         </a>
       </li>
     </ul>

@@ -38,7 +38,7 @@ export default function Courses({ courses }: { courses: any[]; }) {
             <Route path="Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
             <Route
-              path="Assignments/:aId"
+              path="Assignments/:aid"
               element={
                 <AssignmentEditor
                   // dialogTitle="Edit Assignment"
